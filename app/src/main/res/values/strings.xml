@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">SimpleFragmentUseApp</string>
+    <string name="show_details_button_label">Show details</string>
+    <string name="workout_title">Title</string>
+    <string name="workout_description">Description</string>
 </resources>
