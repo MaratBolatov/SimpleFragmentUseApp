@@ -24,16 +24,23 @@ public class WorkoutListFragment extends ListFragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        String[] names = getWorkouts();
+        initAdapter(inflater, names);
+        return super.onCreateView(inflater, container, savedInstanceState);
+    }
+
+    private void initAdapter(LayoutInflater inflater, String[] names) {
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(inflater.getContext(), android.R.layout.simple_list_item_1, names);
+        setListAdapter(adapter);
+    }
+
+    private String[] getWorkouts() {
         String[] names = new String[Workout.workouts.length];
         for (int i = 0; i < names.length; i++) {
             names[i] = Workout.workouts[i].getTitle();
         }
-
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(inflater.getContext(), android.R.layout.simple_list_item_1, names);
-        setListAdapter(adapter);
-
-        return super.onCreateView(inflater, container, savedInstanceState);
+        return names;
     }
 
     @Override
