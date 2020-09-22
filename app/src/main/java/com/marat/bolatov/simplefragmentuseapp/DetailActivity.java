@@ -9,6 +9,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class DetailActivity extends AppCompatActivity {
 
+    public static final String EXTRA_WORKOUT_ID = "id";
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,6 +21,7 @@ public class DetailActivity extends AppCompatActivity {
     private void getWorkoutDetailFragment() {
         WorkoutDetailFragment workoutDetailFragment = (WorkoutDetailFragment)
                 getSupportFragmentManager().findFragmentById(R.id.detail_fragment);
-        workoutDetailFragment.setWorkoutId(0);
+        int workoutId = (int) getIntent().getExtras().get(EXTRA_WORKOUT_ID);
+        workoutDetailFragment.setWorkoutId(workoutId);
     }
 }
