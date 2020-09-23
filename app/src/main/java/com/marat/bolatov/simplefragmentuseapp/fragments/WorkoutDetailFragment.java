@@ -16,7 +16,16 @@ import androidx.fragment.app.Fragment;
 
 public class WorkoutDetailFragment extends Fragment {
 
+    private static final String WORKOUT_ID_KEY = "workoutId";
     private long workoutId;
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if (savedInstanceState != null) {
+            workoutId = savedInstanceState.getLong(WORKOUT_ID_KEY);
+        }
+    }
 
     @Nullable
     @Override
@@ -39,6 +48,11 @@ public class WorkoutDetailFragment extends Fragment {
             TextView workoutDescription = view.findViewById(R.id.fragment_text_description);
             workoutDescription.setText(workout.getDescription());
         }
+    }
+
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle outState) {
+        outState.putLong(WORKOUT_ID_KEY, workoutId);
     }
 
     public void setWorkoutId(long workoutId) {
