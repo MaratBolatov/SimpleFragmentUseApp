@@ -8,6 +8,6 @@
         android:id="@+id/detail_fragment"
         android:name="com.marat.bolatov.simplefragmentuseapp.fragments.WorkoutDetailFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
