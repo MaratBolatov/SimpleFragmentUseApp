@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/stopwatch_fragment"
-        android:name="com.marat.bolatov.simplefragmentuseapp.fragments.StopWatchFragment"
+        android:name="com.marat.bolatov.simplefragmentuseapp.fragments.StopwatchFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 

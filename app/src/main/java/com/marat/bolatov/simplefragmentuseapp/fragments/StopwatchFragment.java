@@ -16,7 +16,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-public class StopWatchFragment extends Fragment implements View.OnClickListener {
+public class StopwatchFragment extends Fragment implements View.OnClickListener {
 
     private static final String SECONDS_KEY = "seconds";
     private static final String WAS_RUNNING_KEY = "wasRunning";
