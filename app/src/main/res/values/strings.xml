@@ -3,4 +3,7 @@
     <string name="show_details_button_label">Show details</string>
     <string name="workout_title">Title</string>
     <string name="workout_description">Description</string>
+    <string name="stopwatch_start_button_label">Start</string>
+    <string name="stopwatch_stop_button_label">Stop</string>
+    <string name="stopwatch_reset_button_label">Reset</string>
 </resources>
