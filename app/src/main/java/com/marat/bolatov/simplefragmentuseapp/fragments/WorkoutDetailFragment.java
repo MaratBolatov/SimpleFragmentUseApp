@@ -13,6 +13,7 @@ import com.marat.bolatov.simplefragmentuseapp.Workout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 public class WorkoutDetailFragment extends Fragment {
 
@@ -22,7 +23,15 @@ public class WorkoutDetailFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (savedInstanceState != null) {
+        if (savedInstanceState == null) {
+            StopwatchFragment stopwatchFragment = new StopwatchFragment();
+            FragmentTransaction fragmentTransaction = getChildFragmentManager().beginTransaction();
+            fragmentTransaction.add(R.id.stopwatch_container, stopwatchFragment);
+            fragmentTransaction.addToBackStack(null);
+            fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+            fragmentTransaction.commit();
+        }
+        else {
             workoutId = savedInstanceState.getLong(WORKOUT_ID_KEY);
         }
     }
